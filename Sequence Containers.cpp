@@ -71,7 +71,10 @@ int main()
 
 	for(int x : vec2)
 		cout << x << endl;
-	//Vetcor //Begin 
+
+	vector<int> a = {1, 2, 3};
+	vec[5] = 5; //Error!!!!!!! Space Not Created Yet
+	//Vetcor //End
 	*/
 
 	/* Deque Properties
