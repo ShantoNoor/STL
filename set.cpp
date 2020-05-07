@@ -39,9 +39,18 @@ int main()
 	// set<int, Lsb_less> myset = {21, 23, 14, 550, 13};
 	// print<set<int, Lsb_less>>(myset);
 
-	set<Person> myset = {{20, "shanto Noor"}, {30, "Jhon"}, {15, "noor"}};
-	for(const auto x : myset)
-		cout << x.age << " " << x.name << endl;
+// 	set<Person> myset = {{20, "shanto Noor"}, {30, "Jhon"}, {15, "noor"}};
+// 	for(const auto x : myset)
+// 		cout << x.age << " " << x.name << endl;
+	
+	auto cmp = [](int a, int b) { return (a % 10) < (b % 10); };
+	set<int, decltype(cmp)> myset(cmp) /*= {21, 23, 14, 550, 13}*/;
+	myset.insert(21);
+	myset.insert(23);
+	myset.insert(14);
+	myset.insert(550);
+	myset.insert(13);
+	print<set<int, decltype(cmp)>>(myset);
 
 
 	return 0;
