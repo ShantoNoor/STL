@@ -21,13 +21,28 @@ public:
 	}
 };
 
+struct Person
+{
+	int age;
+	string name;
+	bool operator < (const Person& rhs) const
+	{
+		return (age < rhs.age);
+	}
+};
+
 int main()
 {
 	// set<int, greater<int>> myset = {2, 3, 1, 5, 4};
 	// print<set<int, greater<int>>>(myset);
 
-	set<int, Lsb_less> myset = {21, 23, 14, 550, 13};
-	print<set<int, Lsb_less>>(myset);
+	// set<int, Lsb_less> myset = {21, 23, 14, 550, 13};
+	// print<set<int, Lsb_less>>(myset);
+
+	set<Person> myset = {{20, "shanto Noor"}, {30, "Jhon"}, {15, "noor"}};
+	for(const auto x : myset)
+		cout << x.age << " " << x.name << endl;
+
 
 	return 0;
 }
